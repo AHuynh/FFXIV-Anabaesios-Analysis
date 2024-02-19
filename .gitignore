@@ -1,0 +1,6 @@
+__pycache__
+config.py
+dataset_*
+fflogs-querycache
+last_seen_id.txt
+seen_guilds.csv
