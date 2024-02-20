@@ -14,6 +14,9 @@ for encounter in ENCOUNTERS:
   with open('dataset_{}.csv'.format(encounter), 'r') as ds_csv:
     for line in csv.reader(ds_csv):
       row = tuple(line[1:])
+      # Validate existence of 8 jobs.
+      if len([i for i in row[:-1] if float(i or 0) > 0]) != 8:
+        continue
       if not row in db:
         out.append(line)
       db.add(row)
